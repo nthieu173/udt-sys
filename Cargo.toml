@@ -3,10 +3,12 @@ name = "udt-sys"
 version = "0.1.0"
 authors = ["hieu"]
 edition = "2018"
+links = "udt"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
+[features]
+vendored = []
 
 [build-dependencies]
 bindgen = "0.53"

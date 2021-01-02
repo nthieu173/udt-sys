@@ -24,12 +24,14 @@ mod test {
                 sa_family: AF_INET as u16,
                 sa_data: [0; 14],
             };
-            crate::udt_bind(
+            let result = crate::udt_bind(
                 sock,
                 &test_addr as *const crate::sockaddr,
                 std::mem::size_of_val(&test_addr) as i32,
             );
-            assert_ne!(sock, crate::UDT_ERROR);
+            assert_ne!(result, crate::UDT_ERROR);
+            let result = crate::udt_close(sock);
+            assert_ne!(result, crate::UDT_ERROR);
             crate::udt_cleanup();
         };
     }

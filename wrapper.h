@@ -1,16 +1,10 @@
-// udt_wrap.h defines wrappers around the udt c++ functions that are callable
-// from C
-
 #ifndef __UDT_WRAP_H__
 #define __UDT_WRAP_H__
 
-#include <udt/udt.h>
+#include <udt.h>
 
 typedef UDTOpt SOCKOPT;
 typedef CPerfMon TRACEINFO;
-
-// We have to redefine htons for use in Go for some reason
-// extern "C" uint16_t _htons(uint16_t hostshort);
 
 extern "C"
 {
@@ -87,4 +81,5 @@ extern "C"
   int udt_perfmon(UDTSOCKET u, TRACEINFO *perf, bool clear);
   UDTSTATUS udt_getsockstate(UDTSOCKET u);
 }
+
 #endif
