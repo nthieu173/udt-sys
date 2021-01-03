@@ -1,5 +1,5 @@
 use cc;
-use std::{env, fs, path::PathBuf};
+use std::{fs, path::PathBuf};
 
 fn main() {
     let udt4_src = PathBuf::from("udt-git/udt4/src");

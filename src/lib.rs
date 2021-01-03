@@ -3,10 +3,10 @@
 #![allow(non_snake_case)]
 
 #[cfg(target_family = "unix")]
-use libc::sockaddr;
+pub use libc::sockaddr;
 
 #[cfg(target_family = "windows")]
-use winapi::shared::ws2def::SOCKADDR as sockaddr;
+pub use winapi::shared::ws2def::SOCKADDR as sockaddr;
 
 use std::{
     ops,
